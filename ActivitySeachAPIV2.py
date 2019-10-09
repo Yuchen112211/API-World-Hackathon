@@ -31,7 +31,6 @@ class activityApi:
 	#Store them into self.data as a dictionary.
 	def initialize_activity_information(self, params):
 		r = requests.get(url = self.weather_url, params = params)
-		print(params)
 		self.data = r.json()
 
 	def get_result_cnt(self):
