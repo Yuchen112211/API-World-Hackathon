@@ -5,6 +5,7 @@ import ActivitySeachAPIV2
 from MeetupAPIV2 import MeetupAPI
 from Algorithms import getWeatherFilterQuery
 from zip_utils import zip_to_city_name, zip_to_lat_lon
+from event_parser import parse_activity, parse_meetup_events
 
 ACTIVITY_API_KEY = "g83cs8mdp8shsmq5xeqvupzf"
 
@@ -46,9 +47,10 @@ def lambda_handler(event, context):
         activityApiInstance.initialize_activity_information(activity_params)
         activities = activityApiInstance.form_all_info(50)
         meetup_activities = meetupClient.find_events(meetup_params)
-        print(meetup_activities)
+        
         # parse the activities and meetup events and store in all activities
-        all_activities.append(activities)
+        all_activities += parse_activity(activities)
+        all_activities += parse_meetup_events(meetup_activities)
     result = {
         "activities": all_activities,
         "weather" : current_weather

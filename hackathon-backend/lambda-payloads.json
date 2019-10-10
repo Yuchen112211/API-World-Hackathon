@@ -1,0 +1,9 @@
+{
+    "hackthon-backend": {
+        "lambda": {
+            "queryStringParameters": {
+                "zipcode": 95123
+            }
+        }
+    }
+}

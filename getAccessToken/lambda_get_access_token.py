@@ -22,9 +22,9 @@ def lambda_handler(event, context):
     # Get access token using authorization code
     data = {
         'client_id': 'ppdp9n0tb1gtaa906d665b4g43',
-        'client_secret': 'g8fduoqsshtq4fgf8i4vegcdab',
+        'client_secret': 'bq3m4d05k5hm2v2dqqursdk7i4',
         'grant_type': 'authorization_code',
-        'redirect_uri': 'https://o2k881hv2k.execute-api.us-west-1.amazonaws.com/dev_stage/auth/redirect',
+        'redirect_uri': 'https://s413ave51g.execute-api.us-west-1.amazonaws.com/test/auth/redirect',
         'code': code
     }
     

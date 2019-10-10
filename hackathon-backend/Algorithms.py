@@ -30,4 +30,4 @@ def getWeatherFilterQuery(zipcode):
 	)
     recommendated_categories = response['Item']['recommended']
 
-    return current_weather, recommendated_categories[:3]
+    return current_weather, recommendated_categories
