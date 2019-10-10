@@ -144,6 +144,8 @@ class activityApi:
 		results['status'] = self.get_sales_status(index)
 		self.determineDuplicate(results,'status')
 
+		results['resource'] = "Access"
+		
 		return results
 
 	@index_may_out_of_range
