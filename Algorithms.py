@@ -1,6 +1,9 @@
 from datetime import datetime
 import WeatherAPI
+import boto3
 
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('activity_mapping')
 
 MAPPING = {"Clear": ["outdoors", "adventure", "tech", "parents", "family", "health", "wellness", "sports", "fitness", "education", "photography", "food", "writing", "language", "music", "movements", "lgbtq", "film", "games", "science", "beliefs", "art", "culture", "book", "reading", "dancing", "pets", "hobbies", "crafts", "fashion", "beauty", "social", "career", "business"], "Clouds": ["outdoors", "adventure", "tech", "parents", "family", "health", "wellness", "sports", "fitness", "education", "photography", "food", "writing", "language", "music", "movements", "lgbtq", "film", "games", "science", "beliefs", "art", "culture", "book", "reading", "dancing", "pets", "hobbies", "crafts", "fashion", "beauty", "social", "career", "business"], "Drizzle": ["tech", "parents", "family", "education", "photography", "food", "writing", "language", "music", "lgbtq", "film", "games", "science", "beliefs", "art", "culture", "book", "reading", "dancing", "hobbies", "crafts", "fashion", "beauty", "social", "career", "business"], "Rain": ["tech", "education", "food", "writing", "language", "music", "lgbtq", "film", "games", "science", "beliefs", "art", "culture", "book", "reading", "hobbies", "crafts", "fashion", "beauty", "social", "career", "business"], "Snow": ["tech", "education", "food", "writing", "language", "music", "lgbtq", "film", "games", "science", "beliefs", "art", "culture", "book", "reading", "hobbies", "crafts", "fashion", "beauty", "social", "career", "business"], "Atmosphere": ["tech", "education", "food", "writing", "language", "music", "lgbtq", "film", "games", "science", "beliefs", "art", "culture", "book", "reading", "hobbies", "crafts", "fashion", "beauty", "social", "career", "business"], "Thunderstorm": ["tech", "education", "food", "writing", "lgbtq", "film", "games", "science", "beliefs", "art", "culture", "book", "reading", "hobbies", "crafts", "fashion", "beauty", "career", "business"]}
 
@@ -22,6 +25,9 @@ def getWeatherFilterQuery(zipcode):
         else:
             min_date = min(d, min_date)
     min_date_key = min_date.strftime('%Y-%m-%d')
-    recommendated_categories = MAPPING[main_weather[min_date_key]]
-    query = ",".join(recommendated_categories)
-    return current_weather, query
+    response = table.get_item(
+		Key={'weather': main_weather[min_date_key]}
+	)
+    recommendated_categories = response['Item']['recommended']
+
+    return current_weather, recommendated_categories[:3]
