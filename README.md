@@ -11,10 +11,13 @@
 Lambda code for your APIWorld Hackathon 2019, use location based info and weather info to recommend activities to 
 
 ### URL to authenticate
-https://o2k881hv2k.execute-api.us-west-1.amazonaws.com/dev_stage/auth
+https://s413ave51g.execute-api.us-west-1.amazonaws.com/test/auth/login
 
 ### Redirect URI
-https://o2k881hv2k.execute-api.us-west-1.amazonaws.com/dev_stage/auth/redirect
+https://s413ave51g.execute-api.us-west-1.amazonaws.com/test/auth/redirect
+
+### API URL
+https://s413ave51g.execute-api.us-west-1.amazonaws.com/test/hackathon?zipcode=95116&date=2019-11-01&radius=5
 
 ## Inspiration
 - AWS good serverless services can provide good support to our service.
