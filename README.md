@@ -46,4 +46,6 @@ https://o2k881hv2k.execute-api.us-west-1.amazonaws.com/dev_stage/auth/redirect
 
 ## What's next for api-world-neu-boss-serverless-api
 
-We plan to create a beautiful web-page and a mobile application for later use. In these application, we wanna to use AWS Route 53 to manage our domain and use API gateway for user authentication. After that, we want to collect some user data to train a machine learning model and create a recommend-algorithm. We think that could make our application more useful and powerful. 
+We plan to create a beautiful web-page and a mobile application for later use. In these application, we wanna to use AWS Route 53 to manage our domain and use API gateway for user authentication. Add certificate to the api to support HTTPS, and use Cloudfront to integrate everything under one domain and available in edge locations.
+
+After that, we want to collect some user data to train a machine learning model and create a recommend-algorithm. We think that could make our application more useful and powerful. 
