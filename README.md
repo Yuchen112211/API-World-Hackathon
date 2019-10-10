@@ -34,15 +34,15 @@ https://o2k881hv2k.execute-api.us-west-1.amazonaws.com/dev_stage/auth/redirect
 
 ## Accomplishments that we're proud of
 - We detailed investigated the AWS Serverless service platforms and applied them to our developments.
-- We understood and managed AWS IAS and authentications of API-Gateway and DynamoDB. 
+- We understood and managed AWS IAM and authentications of API-Gateway and DynamoDB. 
 - By using the AWS services we accelerated our development without considering the deployment of our codes on servers.
 - We developed a full-rounded API with oauth2, which ensured the security of our API's access.
-- //We applied Lambda, API-Gateway and DynamoDB to complete our work.
+- We applied Lambda, API-Gateway and DynamoDB to complete our work.
 
 ## What we learned
 - We learned how to apply Lambda, API-Gateway and DynamoDB to our developments.
 - We learned how oauth2 works in web services.
-- We learned how to manage IAS roles management.// and develop with AWS.
+- We learned how to manage IAM roles management.// and develop with AWS.
 - We learned how to use Cloud 9 IDE to develop, collaborate and test Lambda functions.
 
 ## What's next for api-world-neu-boss-serverless-api
