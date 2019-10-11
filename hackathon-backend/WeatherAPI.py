@@ -73,7 +73,7 @@ class weatherApi:
 			return raw_place['error']
 
 		city_id = int(raw_place['id'])
-		api_key = "970bf7797937283622e2bc3301d07f06"
+		api_key = ""
 		weather_url = self.weather_url + "id=" + str(city_id) +"&APPID=" + api_key
 		r = requests.get(weather_url)
 		self.data = r.json()['list']
