@@ -24,7 +24,7 @@ def lambda_handler(event, context):
         'client_id': 'ppdp9n0tb1gtaa906d665b4g43',
         'client_secret': 'bq3m4d05k5hm2v2dqqursdk7i4',
         'grant_type': 'authorization_code',
-        'redirect_uri': 'https://s413ave51g.execute-api.us-west-1.amazonaws.com/test/auth/redirect',
+        'redirect_uri': 'https://xxxxxx.execute-api.us-west-1.amazonaws.com/test/auth/redirect',
         'code': code
     }
     
