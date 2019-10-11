@@ -74,6 +74,7 @@ class weatherApi:
 
 		city_id = int(raw_place['id'])
 		api_key = ""
+		#Please contact me.
 		weather_url = self.weather_url + "id=" + str(city_id) +"&APPID=" + api_key
 		r = requests.get(weather_url)
 		self.data = r.json()['list']
