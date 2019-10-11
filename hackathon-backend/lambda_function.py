@@ -7,7 +7,7 @@ from Algorithms import getWeatherFilterQuery
 from zip_utils import zip_to_city_name, zip_to_lat_lon
 from event_parser import parse_activity, parse_meetup_events
 
-ACTIVITY_API_KEY = "g83cs8mdp8shsmq5xeqvupzf"
+ACTIVITY_API_KEY = ""
 
 def lambda_handler(event, context):
     today = datetime.today()
